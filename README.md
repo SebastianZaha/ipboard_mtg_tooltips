@@ -38,6 +38,21 @@ Installation
    as `[cards]`.
 
 
+Upgrade
+-------
+
+Follow these steps if you already have this plugin installed and you want to upgrade to a 
+newer version:
+
+1. Download the new zipfile from the link at Installation / Step 1.
+
+2. In `Look and Feel -> Post Content -> BBCode Management` delete the BBCode called 
+   `Magic the gathering Cards` and re-upload the new bbcode.xml file.
+   
+3. Re-upload `mtg_tooltips.php` as explained in Installation / Step 3.
+
+
+
 Support and development
 -----------------------
 
