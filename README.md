@@ -17,10 +17,10 @@ into links to card pages.
 Installation
 ------------
 
-1. Download the [zipfile distribution of this addon](https://github.com/SebastianZaha/joomla_mtg_tooltips/archive/master.zip).
+1. Download the [zipfile distribution of this addon](https://github.com/SebastianZaha/ipboard_mtg_tooltips/archive/master.zip).
 
-2. In the admin panel go to `Look and Feel -> Post Content -> BBCode Management`. At the 
-   bottom of the page in the `Import new BBCodes` section upload the `bbcode.xml` from
+2. In your IPBoard admin panel go to `Look and Feel -> Post Content -> BBCode Management`.
+   At the bottom of the page in the `Import new BBCodes` section upload the `bbcode.xml` from
    the zipfile.
    
 3. Upload the file `mtg_tooltips.php` to your forum installation in the folder 
