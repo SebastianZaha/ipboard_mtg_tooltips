@@ -7,7 +7,7 @@
     image in a tooltip when hovering over them.
   Author: Sebastian Zaha
   Author URI: http://deckbox.org
-  Version: 0.1.0
+  Version: 0.1.1
 */
 class bbcode_cards extends bbcode_parent_class implements bbcodePlugin {
 
@@ -17,20 +17,25 @@ class bbcode_cards extends bbcode_parent_class implements bbcodePlugin {
     }
 
     protected function _replaceText($txt) {
-        preg_match("/^\[cards\]([^\[]*)/", $txt, $match);
-        if ($match) {
-            $txt = $match[1];
-            $cards = preg_split("/[\r\n]/", $txt);
+        $_tags = $this->_retrieveTags();
 
-            foreach($cards as &$card) {
-                $card = trim($card);
-                preg_match('/([\s0-9x-]*)(.*)/', $card, $bits);
-                $card = $bits[1].'<a href="http://deckbox.org/mtg/'.$bits[2].'">'.$bits[2].'</a>';
-            }
+        foreach($_tags as $_tag) {
+			$_tag = strtolower($_tag);
+
+            preg_match("/^\[" . $_tag . "\]([^\[]*)/", $txt, $match);
+            if ($match) {
+                $txt = $match[1];
+                $cards = preg_split("/[\r\n]/", $txt);
+
+                foreach($cards as &$card) {
+                    $card = trim($card);
+                    preg_match('/([\s0-9x-]*)(.*)/', $card, $bits);
+                    $card = $bits[1].'<a href="http://deckbox.org/mtg/'.$bits[2].'">'.$bits[2].'</a>';
+                }
             
-            return implode("<br/>", $cards);
-        } else {
-            return $txt;            
+                return implode("<br/>", $cards);
+            }
         }
+        return $txt;
     }
 }

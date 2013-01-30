@@ -34,7 +34,8 @@ Installation
    ```
 
 5. There is no step 5! After installing, use the `[cards]` bbcode to surround MtG card names
-   or deck lists in your posts.
+   or deck lists in your posts. The tags `[c]` and `[card]` are valid aliases and work the same 
+   as `[cards]`.
 
 
 Support and development
