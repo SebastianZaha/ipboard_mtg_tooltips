@@ -6,21 +6,26 @@
   Description: Easily transform Magic the Gathering card names into links that show the card
     image in a tooltip when hovering over them.
   Author: Sebastian Zaha
-  Author URI: http://deckbox.org
-  Version: 0.1.1
+  Author URI: https://deckbox.org
+  Version: 1.0.0
 */
-class bbcode_cards extends bbcode_parent_class implements bbcodePlugin {
 
-    public function __construct(ipsRegistry $registry) {
+if( !class_exists('bbcode_parent_main_class') ) { 
+    require_once( IPS_ROOT_PATH . 'sources/classes/text/parser/bbcode/defaults.php' ); 
+}
+
+class bbcode_plugin_cards extends bbcode_parent_main_class {
+
+    public function __construct(ipsRegistry $registry, $_parent=null) {
         $this->currentBbcode = 'cards';
-        parent::__construct($registry);
+        parent::__construct($registry, $_parent);
     }
 
     protected function _replaceText($txt) {
         $_tags = $this->_retrieveTags();
 
         foreach($_tags as $_tag) {
-			$_tag = strtolower($_tag);
+            $_tag = strtolower($_tag);
 
             preg_match("/^\[" . $_tag . "\]([^\[]*)/", $txt, $match);
             if ($match) {

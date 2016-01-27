@@ -13,6 +13,8 @@ For more information see [the tooltips integration page](http://deckbox.org/help
 This **IPBoard** plugin provides the bbcode tag `[cards]` that turns a simple card list
 into links to card pages. 
 
+This branch works on __ipboard versions newer than 3.4__. For older versions please check the instructions in the branch `ipboard_before_3.4`.
+
 
 Installation
 ------------
@@ -24,7 +26,7 @@ Installation
    the zipfile.
    
 3. Upload the file `mtg_tooltips.php` to your forum installation in the folder 
-   `admin/sources/classes/bbcode/custom/`.
+   `admin/sources/classes/text/parser/bbcode/`.
 
 4. Go to `Look and Feel -> Manage Skin sets and Templates`. Edit the file 
    `Global Templates / includeJS` and paste the following code at the bottom of it:
